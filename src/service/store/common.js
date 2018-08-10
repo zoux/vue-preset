@@ -1,6 +1,16 @@
 export default {
-  state: {},
+  state: {
+    common: 1
+  },
   getters: {},
-  mutations: {},
-  actions: {}
+  mutations: {
+    SET_COMMON: state => {
+      state.common++
+    }
+  },
+  actions: {
+    UPDATE_COMMON: ({ commit }) => {
+      commit('SET_COMMON')
+    }
+  }
 }

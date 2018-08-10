@@ -1,7 +1,17 @@
 export default {
   namespaced: true,
-  state: {},
+  state: {
+    a: 1
+  },
   getters: {},
-  mutations: {},
-  actions: {}
+  mutations: {
+    SET_A: state => {
+      state.a++
+    }
+  },
+  actions: {
+    UPDATE_A: ({ commit }) => {
+      commit('SET_A')
+    }
+  }
 }
