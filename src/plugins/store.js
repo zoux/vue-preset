@@ -2,11 +2,13 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import { VUEX_DEFAULT_CONFIG } from '../config'
-import store from '../service/store'
+import STORE_SERVICE from '../service/store'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
+const storeInstance = new Vuex.Store({
   ...VUEX_DEFAULT_CONFIG,
-  ...store
+  ...STORE_SERVICE
 })
+
+export default storeInstance

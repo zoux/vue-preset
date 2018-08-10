@@ -10,7 +10,7 @@
 - 具有约定性质的项目结构
 - 配置项集中管理
 - 利用 webpack require.context 实现 router vuex 的自动注入
-- 开发环境默认启用 vuex 的严格模式、热重载、日志监控
+- 开发环境默认启用 vuex 的严格模式、日志监控
 - 已注入 axios api const 全局自定义插件
 - 预留了 router axios 全局拦截器
 - 配置全局 scss-bem
