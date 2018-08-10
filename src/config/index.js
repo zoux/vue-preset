@@ -33,7 +33,8 @@ export const AXIOS_DEFAULT_CONFIG = {
 
 // API 默认配置
 export const API_DEFAULT_CONFIG = {
-  prefix: 'https://cnodejs.org/api/v1'
+  prefix: 'https://cnodejs.org/api/v1',
+  errorIntercept: true
 }
 
 // 业务相关的配置

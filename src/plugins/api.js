@@ -4,15 +4,25 @@ import API_SERVICE from '../service/api'
 
 const API = {}
 
-const { prefix = '' } = API_DEFAULT_CONFIG
+const {
+  prefix = '',
+  errorIntercept = false
+} = API_DEFAULT_CONFIG
 
 Object.keys(API_SERVICE).forEach(key => {
   const { method, url, defaultParams = {} } = API_SERVICE[key]
-  API[key] = params => {
+  API[key] = (
+    params = {},
+    { closeErrorIntercept } = {}
+  ) => {
     const axiosConfig = {
       method,
       url: `${prefix}/${url}`,
-      [method === 'get' ? 'params' : 'data']: { ...defaultParams, ...params }
+      [method === 'get' ? 'params' : 'data']: { ...defaultParams, ...params },
+      option: {
+        errorIntercept,
+        closeErrorIntercept
+      }
     }
     return axios(axiosConfig)
   }

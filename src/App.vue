@@ -12,11 +12,17 @@
 <script>
 export default {
   created () {
-    console.log(this.$const, '\n', this.$utils, '\n', this.$api, '\n', this.$ajax)
+    console.log(
+      this.$const, '\n',
+      this.$utils, '\n',
+      this.$api, '\n',
+      this.$ajax
+    )
     const params = {
       limit: 5
     }
     this.$api.topics(params)
+    // this.$api.topics(params, { closeErrorIntercept: true })
   }
 }
 </script>
