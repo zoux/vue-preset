@@ -2,7 +2,7 @@
   <div>
     <div>页面a</div>
     <hr><br>
-    <div>{{ a }}</div>
+    <div>\{{ a }}</div>
     <button @click="addA">a++</button>
   </div>
 </template>

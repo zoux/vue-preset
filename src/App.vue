@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div>页面APP</div>
-    <div>{{ common }}</div>
+    <div>\{{ common }}</div>
     <button @click="addCommon">common++</button>
     <hr><br>
     <div id="nav">
