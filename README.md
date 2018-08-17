@@ -2,6 +2,8 @@
 
 一个具备主流项目基础配置、预留配置空间的 vue 模版，基于  vue 2.x + vue-cli 3 实现。
 
+愿景是不再为新项目而重复性的初始化配置，诚恳欢迎 star 和 PR～ (´▽｀)
+
 原始模版和思想来自于 [vue-develop-template](https://github.com/PerseveranceZ/vue-develop-template)。
 
 
