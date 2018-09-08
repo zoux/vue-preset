@@ -4,7 +4,7 @@
 
 愿景是不再为新项目而重复性的初始化配置，诚恳欢迎 star 和 PR～ (´▽｀)
 
-利用 `vue create my-app` 使用此模版参见 [vue-cli-plugin-template](https://github.com/zoux/vue-cli-plugin-template)。
+基于此模版的 vue-cli 3 插件请参见 [vue-cli-plugin-template](https://github.com/zoux/vue-cli-plugin-template)。
 
 原始模版和思想来自于 [vue-develop-template](https://github.com/PerseveranceZ/vue-develop-template)。
 
