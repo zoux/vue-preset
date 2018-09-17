@@ -49,7 +49,7 @@ npm run lint
 │   ├── api.js
 │   ├── axios.js
 │   ├── const.js
-│   ├── inject.js                       注入根实例属性
+│   ├── index.js
 │   ├── router.js
 │   └── store.js
 ├── routes                              公共路由
