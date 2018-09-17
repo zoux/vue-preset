@@ -27,7 +27,7 @@ npm run lint
 - webpack require.context 实现 router vuex 的自动注入
 - 预留了 router axios 全局拦截器
 - 开发环境默认启用 vuex 的严格模式、日志监控
-- 全局注入 axios api const utils 等服务
+- 可配置的注入 $axios $api $constants $utils 等全局服务
 - 全局注入 scss-bem
 
 
@@ -48,7 +48,7 @@ npm run lint
 ├── plugins                             插件配置
 │   ├── api.js
 │   ├── axios.js
-│   ├── const.js
+│   ├── constants.js
 │   ├── index.js
 │   ├── router.js
 │   └── store.js
@@ -57,7 +57,7 @@ npm run lint
 │   └── index.js
 ├── service                             公共服务
 │   ├── api                             ajax 请求模块
-│   ├── const                           const 常量模块
+│   ├── constants                       constants 常量模块
 │   ├── store                           vuex 状态模块
 │   └── utils                           工具库
 │        └── requireContextGetModules   require.context 工具方法
