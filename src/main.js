@@ -12,9 +12,7 @@ Vue.config.productionTip = DEBUG_VUE_TIP
 Vue.use(CommonComponents)
 Vue.use(plugins)
 
-window.GLOBAL = {}
-
-window.GLOBAL.APP = new Vue({
+new Vue({
   router,
   store,
   render: h => h(App)
