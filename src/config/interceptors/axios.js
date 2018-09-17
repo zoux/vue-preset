@@ -16,13 +16,17 @@ export function requestFailFunc (err) {
 export function responseSuccessFunc (res) {
   CONSOLE_RESPONSE_ENABLE && console.info('responseSuccess', '\n', res)
   // 自定义响应成功逻辑，全局拦截接口，根据不同业务做不同处理，响应成功监控等
+  // ...
   return res
 }
 
 export function responseFailFunc (err) {
   // 响应失败，可根据 err.message 和 err.response 来做监控处理
   const { message, response } = err
+  CONSOLE_RESPONSE_ENABLE && console.info('responseFail', '\n', `message: ${message}`, '\n', response)
   const { errorIntercept, closeErrorIntercept } = response.config.option
-  errorIntercept && !closeErrorIntercept && console.info('responseFail', '\n', `message: ${message}`, '\n', response)
+  if (errorIntercept && !closeErrorIntercept) {
+    // 自定义全局错误拦截处理
+  }
   return Promise.reject(err)
 }
