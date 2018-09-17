@@ -25,7 +25,7 @@ export default {
   },
   created () {
     console.log(
-      this.$const, '\n',
+      this.$constants, '\n',
       this.$utils, '\n',
       this.$api, '\n',
       this.$axios

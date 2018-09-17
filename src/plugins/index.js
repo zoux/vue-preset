@@ -1,6 +1,6 @@
 import axios from './axios'
 import api from './api'
-import consts from './const'
+import constants from './constants'
 import utils from '../service/utils'
 
 function inject (Vue, name, module) {
@@ -15,7 +15,7 @@ export default {
   install (Vue) {
     inject(Vue, '$axios', axios)
     inject(Vue, '$api', api)
-    inject(Vue, '$const', consts)
+    inject(Vue, '$constants', constants)
     inject(Vue, '$utils', utils)
   }
 }
