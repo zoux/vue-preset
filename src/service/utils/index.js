@@ -1,5 +1,5 @@
-import copy from './modules/copy'
+import COPY from './modules/copy'
 
 export default {
-  copy
+  COPY
 }

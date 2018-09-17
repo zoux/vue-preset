@@ -23,16 +23,14 @@ export default {
       'common'
     ])
   },
-  created () {
+  mounted () {
     console.log(
       this.$constants, '\n',
       this.$utils, '\n',
       this.$api, '\n',
       this.$axios
     )
-    const params = {
-      limit: 5
-    }
+    const params = { limit: 5 }
     this.$api.topics(params)
     this.$api.topics(params, { closeErrorIntercept: true })
   },
