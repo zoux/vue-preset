@@ -16,6 +16,8 @@
 
 <script>
 import { mapState, mapActions } from 'vuex'
+import { REGEXP_PHONE, REGEXP_PASSWORD } from './service/constants'
+import { COPY, ADD, SUBTRACT } from './service/utils'
 
 export default {
   computed: {
@@ -30,6 +32,9 @@ export default {
       this.$api, '\n',
       this.$axios
     )
+    console.log({ REGEXP_PHONE, REGEXP_PASSWORD })
+    console.log({ COPY, ADD, SUBTRACT })
+
     const params = { limit: 5 }
     this.$api.topics(params)
     this.$api.topics(params, { closeErrorIntercept: true })

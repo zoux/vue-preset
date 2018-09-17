@@ -1,5 +1,2 @@
-import COPY from './modules/copy'
-
-export default {
-  COPY
-}
+export { default as COPY } from './modules/copy'
+export { ADD, SUBTRACT } from './modules/compute'
