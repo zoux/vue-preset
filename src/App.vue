@@ -28,7 +28,7 @@ export default {
       this.$const, '\n',
       this.$utils, '\n',
       this.$api, '\n',
-      this.$ajax
+      this.$axios
     )
     const params = {
       limit: 5

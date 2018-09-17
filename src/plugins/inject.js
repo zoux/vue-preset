@@ -13,7 +13,7 @@ function inject (Vue, name, module) {
 
 export default {
   install (Vue) {
-    inject(Vue, '$ajax', axios)
+    inject(Vue, '$axios', axios)
     inject(Vue, '$api', api)
     inject(Vue, '$const', consts)
     inject(Vue, '$utils', utils)
