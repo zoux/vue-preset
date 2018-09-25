@@ -26,6 +26,7 @@ Object.keys(API_SERVICE).forEach(key => {
     }
     return axios(axiosConfig)
   }
+  Object.assign(API[key], API_SERVICE[key])
 })
 
 export default API
