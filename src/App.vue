@@ -54,8 +54,4 @@ export default {
 <style lang="scss">
   @import "./assets/style/common";
   @import "./assets/iconfont/iconfont.css";
-  #nav {
-    width: 750px;
-    background-color: skyblue;
-  }
 </style>
