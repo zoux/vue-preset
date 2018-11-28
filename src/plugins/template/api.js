@@ -1,6 +1,6 @@
 import axios from './axios'
-import { API_DEFAULT_CONFIG } from '../config'
-import API_SERVICE from '../service/api'
+import { API_DEFAULT_CONFIG } from '../../config'
+import API_SERVICE from '../../service/api'
 
 const API = {}
 
