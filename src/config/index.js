@@ -30,7 +30,7 @@ export const AXIOS_DEFAULT_CONFIG = {
 
 // API 默认配置
 export const API_DEFAULT_CONFIG = {
-  prefix: '',
+  prefix: '/api',
   errorIntercept: true
 }
 
