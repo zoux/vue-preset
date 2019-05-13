@@ -26,7 +26,6 @@ export default {
     ])
   },
   mounted () {
-    /* eslint-disable */
     console.log(
       this.$constants, '\n',
       this.$utils, '\n',
