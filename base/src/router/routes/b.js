@@ -1,3 +1,5 @@
+const load = viewName => () => import(`@/views/${viewName}.vue`)
+
 export default [
   {
     path: '/b',
@@ -5,7 +7,7 @@ export default [
     meta: {
       title: 'b'
     },
-    component: () => import('@/views/b/index.vue'),
+    component: load('b/index'),
     children: [
       {
         path: 'x',
@@ -13,7 +15,7 @@ export default [
         meta: {
           title: 'b-x'
         },
-        component: () => import('@/views/b/x.vue')
+        component: load('b/x')
       }
     ]
   }

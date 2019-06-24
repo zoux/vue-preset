@@ -1,13 +1,13 @@
 import Vue from 'vue'
 
-import CommonComponents from './components'
-import template from './plugins/template'
-import router from './plugins/template/router'
-import store from './plugins/template/store'
-import App from './App.vue'
+import injectComponents from '@/components/inject'
+import injectInstanceProperty from '@/config/inject'
+import router from '@/router'
+import store from '@/store'
+import App from '@/App'
 
-Vue.use(CommonComponents)
-Vue.use(template)
+Vue.use(injectComponents)
+Vue.use(injectInstanceProperty)
 
 Vue.config.productionTip = false
 

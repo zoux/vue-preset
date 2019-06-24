@@ -16,8 +16,9 @@
 
 <script>
 import { mapState, mapActions } from 'vuex'
-import { REGEXP_PHONE, REGEXP_PASSWORD } from './service/constants'
-import { COPY, computeClass } from './service/utils'
+import axios from '@/services/axios'
+import { REGEXP_PHONE, REGEXP_PASSWORD } from '@/services/constants'
+import { COPY, computeClass } from '@/services/utils'
 
 export default {
   computed: {
@@ -28,13 +29,18 @@ export default {
   mounted () {
     /* eslint-disable */
     console.log(
+      this.$api, '\n',
+      this.$axios, '\n',
       this.$constants, '\n',
       this.$utils, '\n',
-      this.$api, '\n',
-      this.$axios
     )
-    console.log({ REGEXP_PHONE, REGEXP_PASSWORD })
-    console.log({ COPY, computeClass })
+    console.log(
+      axios, '\n',
+      REGEXP_PHONE, '\n',
+      REGEXP_PASSWORD, '\n',
+      COPY(1), '\n',
+      computeClass.add(1), '\n',
+    )
 
     const params = { limit: 5 }
     this.$api.topics(params)

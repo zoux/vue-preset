@@ -27,9 +27,11 @@ export function responseFailFunc (err) {
   const { message, response } = err
   // eslint-disable-next-line
   CONSOLE_RESPONSE_ENABLE && console.info('responseFail', '\n', `message: ${message}`, '\n', response)
-  const { errorIntercept, closeErrorIntercept } = response.config.option
-  if (errorIntercept && !closeErrorIntercept) {
-    // 自定义全局错误拦截处理
+  if (response) {
+    const { errorIntercept, closeErrorIntercept } = response.config.option
+    if (errorIntercept && !closeErrorIntercept) {
+      // 自定义全局错误拦截处理
+    }
   }
   return Promise.reject(err)
 }

@@ -1,5 +1,5 @@
 export default (() => {
-  const modulesContext = require.context('./modules', false, /\.js$/)
+  const modulesContext = require.context('./', false, /(?<!index)\.js$/)
   const chunks = modulesContext.keys().reduce((chunks, key) => {
     return Object.assign(chunks, { [key.replace(/(^.*\/)|(\.js$)/g, '')]: modulesContext(key).default })
   }, {})

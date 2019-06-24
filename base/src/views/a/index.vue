@@ -2,7 +2,7 @@
   <div>
     <div>page A</div>
     <br><hr><br>
-    <div>\{{ a }}</div>
+    <BaseWrap top="20">\{{ a }}</BaseWrap>
     <button @click="addA">a++</button>
   </div>
 </template>

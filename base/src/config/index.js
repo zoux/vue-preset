@@ -34,9 +34,12 @@ export const API_DEFAULT_CONFIG = {
   errorIntercept: true
 }
 
-// 业务相关的配置
-// ...
+// 全局注入设置
+export const GLOBAL_API_ENABLE = true
+export const GLOBAL_AXIOS_ENABLE = true
+export const GLOBAL_CONSTANTS_ENABLE = true
+export const GLOBAL_UTILS_ENABLE = true
 
-// 方便开发的配置
+// 请求打印配置
 export const CONSOLE_REQUEST_ENABLE = !NODE_ENV_IS_PRODUCTION && false // 开启请求参数打印
 export const CONSOLE_RESPONSE_ENABLE = !NODE_ENV_IS_PRODUCTION && true // 开启响应参数打印

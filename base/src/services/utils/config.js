@@ -1,4 +1,4 @@
-import * as UTILS_SERVICE from '../../service/utils'
+import * as UTILS_SERVICE from '@/services/utils/index'
 
 const UTILS = { ...UTILS_SERVICE }
 
