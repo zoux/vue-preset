@@ -26,15 +26,15 @@ export default {
       'common'
     ])
   },
-  mounted () {
+  async mounted () {
     /* eslint-disable */
-    console.log(
+    console.info(
       this.$api, '\n',
       this.$axios, '\n',
       this.$constants, '\n',
       this.$utils, '\n',
     )
-    console.log(
+    console.info(
       axios, '\n',
       REGEXP_PHONE, '\n',
       REGEXP_PASSWORD, '\n',
@@ -42,9 +42,13 @@ export default {
       computeClass.add(1), '\n',
     )
 
-    const params = { limit: 5 }
-    this.$api.topics(params)
-    this.$api.topics(params, { closeErrorIntercept: true })
+    try {
+      const params = { limit: 5 }
+      this.$request(this.$api.topics, params)
+      await this.$request(this.$api.topics, params, { isOpenErrorIntercept: false })
+    } catch (e) {
+      console.error('因为 isAllowMultipleRequest，并发的多余请求被拦截')
+    }
   },
   methods: {
     ...mapActions([

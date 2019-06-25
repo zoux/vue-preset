@@ -28,8 +28,8 @@ export function responseFailFunc (err) {
   // eslint-disable-next-line
   CONSOLE_RESPONSE_ENABLE && console.info('responseFail', '\n', `message: ${message}`, '\n', response)
   if (response) {
-    const { errorIntercept, closeErrorIntercept } = response.config.option
-    if (errorIntercept && !closeErrorIntercept) {
+    const { isOpenErrorIntercept } = response.config.options
+    if (isOpenErrorIntercept) {
       // 自定义全局错误拦截处理
     }
   }

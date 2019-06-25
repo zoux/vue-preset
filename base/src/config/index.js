@@ -30,13 +30,16 @@ export const AXIOS_DEFAULT_CONFIG = {
 
 // API 默认配置
 export const API_DEFAULT_CONFIG = {
-  prefix: '/api',
-  errorIntercept: true
+  prefix: '/api', // api 前缀地址
+  isOpenErrorIntercept: true, // 是否开启 axios 错误拦截
+  isAllowMultipleRequest: false, // 是否允许同类型请求并发
+  isUseStorage: false // 是否允许使用 storage 缓存来替代请求返回结果
 }
 
 // 全局注入设置
-export const GLOBAL_API_ENABLE = true
 export const GLOBAL_AXIOS_ENABLE = true
+export const GLOBAL_REQUEST_ENABLE = true
+export const GLOBAL_API_ENABLE = true
 export const GLOBAL_CONSTANTS_ENABLE = true
 export const GLOBAL_UTILS_ENABLE = true
 

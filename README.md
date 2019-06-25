@@ -24,7 +24,7 @@ npm run build
 - webpack require.context 实现 components/inject router vuex services/api 的自动注入
 - 预留了 router axios 全局拦截器
 - 开发环境默认启用 vuex 的严格模式、日志监控
-- 可配置全局注入或按需加载 $axios $api $constants $utils 等服务
+- 可配置全局注入或按需加载 $axios $request $api $constants $utils 等服务
 - 全局注入 scss-bem
 
 
@@ -44,8 +44,9 @@ npm run build
 ├── router                              vue-router 模块
 ├── services                            公共服务
 │   ├── api                             api 模块
-│   ├── axios                           ajax 请求工具模块
+│   ├── axios                           axios 实例化模块
 │   ├── constants                       constants 常量模块
+│   ├── request                         基于 axios 实例封装的请求工具
 │   └── utils                           工具库
 ├── store                               vuex 模块
 ├── views                               模块/页面
