@@ -47,7 +47,7 @@ export default {
       this.$request(this.$api.topics, params)
       await this.$request(this.$api.topics, params, { isOpenErrorIntercept: false })
     } catch (e) {
-      console.error('因为 isAllowMultipleRequest，并发的多余请求被拦截')
+      console.error('因为 isNotAllowMultipleRequest，并发的多余请求被拦截')
     }
   },
   methods: {

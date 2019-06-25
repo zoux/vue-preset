@@ -23,7 +23,7 @@ function getRequestItem (item, params, options) {
     header: {},
     method,
     url: `${API_DEFAULT_CONFIG.prefix}${url}`,
-    [method === 'get' ? 'params' : 'data']: params,
+    [getRequestParamsKey(item)]: params,
     options: {
       ...API_DEFAULT_CONFIG,
       ...options
@@ -34,9 +34,15 @@ function getRequestItem (item, params, options) {
 }
 
 function requestStart (requestItem) {
-  const { isAllowMultipleRequest } = requestItem.options
+  const { isNotAllowMultipleRequest } = requestItem.options
 
-  if (!isAllowMultipleRequest && requestQueue.find(item => item.url === requestItem.url)) return false
+  if (
+    isNotAllowMultipleRequest &&
+    requestQueue.find(item => item.url === requestItem.url &&
+    JSON.stringify(item[getRequestParamsKey(item)]) === JSON.stringify(requestItem[getRequestParamsKey(requestItem)]))
+  ) {
+    return false
+  }
 
   requestQueuePush(requestItem)
   return true
@@ -47,7 +53,7 @@ async function requestReturn (requestItem) {
 
   let storageKey = ''
   if (isUseStorage) {
-    storageKey = requestItem.url + JSON.stringify(requestItem[requestItem.method === 'get' ? 'params' : 'data'])
+    storageKey = requestItem.url + JSON.stringify(requestItem[getRequestParamsKey(requestItem)])
     const storageData = localStorage.getItem(storageKey)
     if (storageData) {
       const res = JSON.parse(storageData)
@@ -68,4 +74,8 @@ function requestQueuePush (requestItem) {
 
 function requestQueueSplice (requestItem) {
   requestQueue.splice(requestQueue.findIndex(item => item.url === requestItem.url), 1)
+}
+
+function getRequestParamsKey (item) {
+  return item.method === 'get' ? 'params' : 'data'
 }

@@ -32,8 +32,8 @@ export const AXIOS_DEFAULT_CONFIG = {
 export const API_DEFAULT_CONFIG = {
   prefix: '/api', // api 前缀地址
   isOpenErrorIntercept: true, // 是否开启 axios 错误拦截
-  isAllowMultipleRequest: false, // 是否允许同类型请求并发
-  isUseStorage: false // 是否允许使用 storage 缓存来替代请求返回结果
+  isNotAllowMultipleRequest: true, // 是否禁止同类型请求并发
+  isUseStorage: false // 是否使用 storage 缓存来替代请求返回结果
 }
 
 // 全局注入设置
