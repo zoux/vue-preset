@@ -2,6 +2,7 @@ import Vue from 'vue'
 
 import injectComponents from '@/components/inject'
 import injectInstanceProperty from '@/config/inject'
+
 import router from '@/router'
 import store from '@/store'
 import App from '@/App'

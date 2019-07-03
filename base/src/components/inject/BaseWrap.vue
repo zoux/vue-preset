@@ -43,7 +43,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @include b('base-wrap') {
+  .base-wrap {
     position: relative;
   }
 </style>
