@@ -58,7 +58,7 @@ async function requestReturn (requestItem) {
     if (storageData) {
       const res = JSON.parse(storageData)
       // eslint-disable-next-line
-      CONSOLE_RESPONSE_ENABLE && console.info('responseSuccess', '\n', res)
+      CONSOLE_RESPONSE_ENABLE && console.info('responseSuccess by storage', '\n', res)
       return res
     }
   }
