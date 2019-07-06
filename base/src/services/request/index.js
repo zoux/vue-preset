@@ -20,7 +20,7 @@ function getRequestItem (item, params, options) {
   const { method, url } = item
 
   const requestItem = {
-    header: {},
+    headers: {},
     method,
     url: `${API_DEFAULT_CONFIG.prefix}${url}`,
     [getRequestParamsKey(item)]: params,
