@@ -18,16 +18,17 @@ export default async function request (item, params, options) {
 
 function getRequestItem (item, params, options) {
   const { method, url } = item
+  const margeOptions = {
+    ...API_DEFAULT_CONFIG,
+    ...options
+  }
 
   const requestItem = {
     headers: {},
     method,
-    url: `${API_DEFAULT_CONFIG.prefix}${url}`,
+    url: `${margeOptions.prefix}${url}`,
     [getRequestParamsKey(item)]: params,
-    options: {
-      ...API_DEFAULT_CONFIG,
-      ...options
-    }
+    options: margeOptions
   }
 
   return requestItem
