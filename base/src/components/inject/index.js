@@ -1,7 +1,8 @@
 const components = (() => {
-  const modulesContext = require.context('./', true, /\.vue$/)
+  const modulesContext = require.context('./', true, /\.js$/)
   const chunks = modulesContext.keys().reduce((chunks, key) => {
-    return Object.assign(chunks, { [key.replace(/(^.*\/)|(\.vue$)/g, '')]: modulesContext(key).default })
+    if (key === './index.js') return chunks
+    return Object.assign(chunks, { [/\.\/(.+)\/index\.js/.exec(key)[1]]: modulesContext(key).default })
   }, {})
   const result = Object.keys(chunks).reduce((modules, key) => {
     modules[key] = chunks[key]
@@ -13,7 +14,7 @@ const components = (() => {
 export default {
   install (Vue) {
     Object.keys(components).forEach(key => {
-      Vue.component(components[key].name, components[key])
+      Vue.component(key, components[key])
     })
   }
 }

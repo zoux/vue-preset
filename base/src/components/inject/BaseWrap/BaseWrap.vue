@@ -6,7 +6,6 @@
 
 <script>
 export default {
-  name: 'BaseWrap',
   props: {
     top: {
       type: [String, Number],
