@@ -3,11 +3,7 @@ const components = (() => {
   const chunks = modulesContext.keys().reduce((object, key) => {
     return Object.assign(object, { [key.replace(/(^.*\/)|(\.vue$)/g, '')]: modulesContext(key).default })
   }, {})
-  const result = Object.keys(chunks).reduce((modules, key) => {
-    modules[key] = chunks[key]
-    return modules
-  }, {})
-  return result
+  return chunks
 })()
 
 export default {
