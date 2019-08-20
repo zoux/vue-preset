@@ -3,7 +3,9 @@ module.exports = (api, options) => {
 
   const dependencies = {
     'axios': '0.18.1',
-    'sass-bem': '*'
+    'sass-bem': '*',
+    'vue-router': '*',
+    'vuex': '*'
   }
   switch (template) {
     case 'default':
@@ -22,10 +24,10 @@ module.exports = (api, options) => {
   })
   switch (template) {
     case 'default':
-      api.render('./templates/default')
+      api.render('./template/default')
       break
     case 'typescript':
       break
   }
-  api.render('./templates/common')
+  api.render('./template/common')
 }
