@@ -17,7 +17,7 @@ module.exports = (api, options) => {
 
   api.render(files => {
     Object.keys(files)
-      .filter(path => ['public/', 'src/', 'tsconfig.json', 'tslint.json'].some(keyword => path.includes(keyword)))
+      .filter(path => ['src/', 'tsconfig.json', 'tslint.json'].some(keyword => path.includes(keyword)))
       .forEach(path => delete files[path])
   })
   switch (template) {
