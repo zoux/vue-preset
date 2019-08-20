@@ -1,0 +1,21 @@
+{
+  "// 依赖配置": "",
+  "router": true,
+  "routerHistoryMode": false,
+  "vuex": true,
+  "plugins": {
+    "@vue/cli-plugin-babel": {},
+    "@vue/cli-plugin-eslint": {
+      "config": "standard",
+      "lintOn": [
+        "save",
+        "commit"
+      ]
+    }
+  },
+  "cssPreprocessor": "dart-sass",
+
+  "// eslint / babel / postCSS 配置": "",
+  "useConfigFiles": true,
+  "configs": {}
+}
