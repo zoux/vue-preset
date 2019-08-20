@@ -1,19 +1,28 @@
 ## Intro
 
-一个具备主流项目基础配置、预留配置空间的 vue 模版，基于  vue 2.x + vue-cli 3 实现。
+一个用于快速生成项目模版的 vue-cli preset，具备主流项目基础配置、预留配置空间。基于 vue 2 + vue-cli 3 实现。
 
-愿景是不再为新项目而重复性的初始化配置，诚恳欢迎 star 和 PR～ (´▽｀)
+愿景是不再为新项目而重复性的初始化配置。
 
-基于此模版的 vue-cli 3 插件请参见 [vue-cli-plugin-template](https://github.com/zoux/vue-cli-plugin-template)。
+> 之前由 vue-cli plugin [vue-cli-plugin-template](https://github.com/zoux/vue-cli-plugin-template) 实现快速生成项目模版的功能。
+
+
+### 为什么在生成模版时，使用 preset 而不是 plugin？
+
+在生成模版时，preset 相比于 plugin 更高效。
+
+preset 一步即可生成模版 `vue create -p zoux/vue-preset my-app`；而 plugin 需要先 `vue create my-app` 后再 `vue add @zouxin/vue-template` 才可完成相似效果。
 
 
 ## Use
 
 ```bash
-npm i
-npm run serve
-npm run build
+vue create -p zoux/vue-preset my-app
 ```
+
+若项目为移动端项目，可使用 [vue-cli-plugin-pxtorem](https://github.com/zoux/vue-cli-plugin-pxtorem) 添加 px -> rem + flexible 的自适应能力。
+
+若项目需要优化首屏渲染，可使用 [vue-cli-plugin-skeleton](https://github.com/zoux/vue-cli-plugin-skeleton) 添加骨架屏。
 
 
 ## Feature
