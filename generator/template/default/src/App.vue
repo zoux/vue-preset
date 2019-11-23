@@ -16,9 +16,10 @@
 
 <script>
 import { mapState, mapActions } from 'vuex'
+import api from '@/services/api'
 import axios from '@/services/axios'
-import { REGEXP_PHONE, REGEXP_PASSWORD } from '@/services/constants'
-import { COPY, computeClass } from '@/services/utils'
+import { REGEXP_PHONE } from '@/services/constants'
+import { computeClass } from '@/services/utils'
 
 export default {
   computed: {
@@ -26,7 +27,7 @@ export default {
       'common'
     ])
   },
-  async mounted () {
+  created () {
     /* eslint-disable */
     console.info(
       this.$api, '\n',
@@ -35,27 +36,19 @@ export default {
       this.$utils, '\n',
     )
     console.info(
+      api, '\n',
       axios, '\n',
       REGEXP_PHONE, '\n',
-      REGEXP_PASSWORD, '\n',
-      COPY(1), '\n',
-      computeClass.add(1), '\n',
+      computeClass, '\n',
     )
-
-    try {
-      const params = { limit: 5 }
-      this.$request(this.$api.topics, params)
-      await this.$request(this.$api.topics, params, { isOpenErrorIntercept: false })
-    } catch (e) {
-      console.error('因为 isNotAllowMultipleRequest，并发的多余请求被拦截')
-    }
   },
   methods: {
     ...mapActions([
       'UPDATE_COMMON'
     ]),
     addCommon () {
-      this.UPDATE_COMMON()
+      this.UPDATE_COMMON({ limit: 5 })
+      this.UPDATE_COMMON({ limit: 5 })
     }
   }
 }
