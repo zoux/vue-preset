@@ -1,12 +1,11 @@
 {
-  "useTaobaoRegistry": true,
-  "router": false,
-  "routerHistoryMode": false,
-  "vuex": false,
-  "cssPreprocessor": "dart-sass",
   "useConfigFiles": true,
   "plugins": {
     "@vue/cli-plugin-babel": {},
+    "@vue/cli-plugin-router": {
+      "historyMode": false
+    },
+    "@vue/cli-plugin-vuex": {},
     "@vue/cli-plugin-eslint": {
       "config": "standard",
       "lintOn": [
@@ -14,5 +13,6 @@
         "commit"
       ]
     }
-  }
+  },
+  "cssPreprocessor": "dart-sass"
 }

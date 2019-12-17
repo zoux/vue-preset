@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div>APP</div>
+    <div class="test">APP</div>
     <div>\{{ common }}</div>
     <button @click="addCommon">common++</button>
     <br><hr><br>
@@ -57,4 +57,8 @@ export default {
 <style lang="scss">
   @import "assets/style/common";
   @import "assets/iconfont/iconfont.css";
+
+  .test {
+    color: $someColor;
+  }
 </style>

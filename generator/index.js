@@ -2,10 +2,7 @@ module.exports = (api, options) => {
   const { template } = options
 
   const dependencies = {
-    'axios': '0.18.1',
-    'sass-bem': '*',
-    'vue-router': '*',
-    'vuex': '*'
+    'axios': '0.18.1'
   }
   switch (template) {
     case 'default':
@@ -22,6 +19,7 @@ module.exports = (api, options) => {
       .filter(path => ['src/', 'tsconfig.json', 'tslint.json'].some(keyword => path.includes(keyword)))
       .forEach(path => delete files[path])
   })
+
   switch (template) {
     case 'default':
       api.render('./template/default')
@@ -29,5 +27,6 @@ module.exports = (api, options) => {
     case 'typescript':
       break
   }
+
   api.render('./template/common')
 }

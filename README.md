@@ -65,6 +65,13 @@ vue create -p zoux/vue-preset my-app
 ```
 
 
+## 调试
+
+直接使用当前目录下的 preset.json 文件：
+
+`vue create --preset ./ app`
+
+
 ## License
 
 MIT

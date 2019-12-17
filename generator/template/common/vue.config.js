@@ -1,11 +1,11 @@
 module.exports = {
   publicPath: process.env.NODE_ENV === 'development' ? '/' : '././',
   outputDir: 'dist',
-  assetsDir: 'static',
+  assetsDir: 'assets',
   css: {
     loaderOptions: {
       sass: {
-        data: `@import "./node_modules/sass-bem/_bem.scss";`
+        prependData: `@import "~@/assets/style/variables.scss";`
       }
     }
   },
