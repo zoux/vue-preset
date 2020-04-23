@@ -1,3 +1,3 @@
 export default {
-  topics: { method: 'get', url: '/topics' } // cnode 主题列表
+  topics: { method: 'get', url: '/api/topics' } // cnode 主题列表
 }

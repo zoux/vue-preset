@@ -1,7 +1,7 @@
 import { API_DEFAULT_CONFIG } from '@/config'
 import { getRequestParamsKey } from './utils'
 
-export function getRequestItem (item, params, options) {
+export function getRequestItem (item, params = {}, options = {}) {
   const { method, url } = item
   const margeOptions = {
     ...API_DEFAULT_CONFIG,
@@ -9,9 +9,12 @@ export function getRequestItem (item, params, options) {
   }
 
   const requestItem = {
-    headers: {},
+    headers: {
+      ...(API_DEFAULT_CONFIG.headers || {}),
+      ...(options.headers || {})
+    },
     method,
-    url: `${margeOptions.prefix}${url}`,
+    url,
     [getRequestParamsKey(item)]: params,
     options: margeOptions
   }

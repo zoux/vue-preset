@@ -1,5 +1,3 @@
-const load = viewName => () => import(`@/views/${viewName}.vue`)
-
 export default [
   {
     path: '/',
@@ -7,6 +5,6 @@ export default [
     meta: {
       title: 'a'
     },
-    component: load('a/index')
+    component: () => import(/* webpackChunkName: "a" */ '@/views/a/index.vue')
   }
 ]

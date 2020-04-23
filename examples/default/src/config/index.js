@@ -22,18 +22,17 @@ export const VUEX_DEFAULT_CONFIG = {
 
 // axios 默认配置
 export const AXIOS_DEFAULT_CONFIG = {
-  timeout: 60000,
-  headers: {
-    'Content-Type': 'application/json;charset=UTF-8'
-  }
+  timeout: 60000
 }
 
 // API 默认配置
 export const API_DEFAULT_CONFIG = {
-  prefix: '/api', // api 前缀地址
+  headers: {
+    'Content-Type': 'application/json;charset=UTF-8'
+  },
   isOpenErrorIntercept: true, // 是否开启 axios 错误拦截
   isNotAllowMultipleRequest: true, // 是否禁止同类型请求并发
-  isUseStorage: false // 是否使用 storage 缓存来替代请求返回结果
+  multipleRequestGapTime: 5000 // 禁止同类型请求并发功能启用时，判定为同类型请求的间隔时间
 }
 
 // 全局注入设置
