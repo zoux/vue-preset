@@ -1,5 +1,7 @@
+const isDev = process.env.NODE_ENV === 'development'
+
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'development' ? '/' : '././',
+  publicPath: isDev ? '/' : '././',
   outputDir: 'dist',
   assetsDir: 'static',
   css: {
@@ -55,6 +57,5 @@ function setMetaVersion (config) {
 }
 
 function addVConsole (config) {
-  const isDev = process.env.NODE_ENV === 'development'
   config.plugin('vConsole').use(require('vconsole-webpack-plugin'), [{ enable: isDev }])
 }
