@@ -23,13 +23,9 @@ export function responseSuccessFunc (res) {
 }
 
 export function responseFailFunc (err) {
-  // 响应失败，可根据 err.message 和 err.response 来做监控处理
-  const { message, response } = err
   // eslint-disable-next-line
-  CONSOLE_RESPONSE_ENABLE && console.info('responseFail', '\n', `message: ${message}`, '\n', response)
-  const { config: { options: { isOpenErrorIntercept } } } = response
-  if (isOpenErrorIntercept) {
-    // 自定义全局错误拦截处理
-  }
-  return Promise.reject(err)
+  CONSOLE_RESPONSE_ENABLE && console.info('responseFail', '\n', err.response)
+  // 自定义全局错误拦截处理
+  // ...
+  return Promise.reject(err.response)
 }
